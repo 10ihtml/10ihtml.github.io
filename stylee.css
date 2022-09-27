@@ -1,8 +1,8 @@
-.banner-btn{
+.bannere-btne{
     margin: 70px auto 0;
     text-align: center;
 }
-.banner-btn a{
+.bannere-btne a{
     width: 150px;
     text-decoration: none;
     display: inline-block;
@@ -15,7 +15,7 @@
     transition: color 0.5s;
     font-family: Verdana;
 }
-.banner-btn a span{
+.bannere-btne a span{
     width:  0%;
     height: 100%;
     position: absolute;
@@ -26,9 +26,9 @@
     transition: 0.5s;
 
 }
-.banner-btn a:hover span{
+.bannere-btne a:hover span{
     width: 100%;
 }
-.banner-btn a:hover{
+.bannere-btne a:hover{
     color: #fff;
 }
