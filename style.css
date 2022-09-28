@@ -2,16 +2,22 @@
     margin: 0;
     padding: 0;  
 }
-#banner{
-    background: url(bg2.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+body {
+    overflow: hidden;
 }
 .banner-text{
     text-align: center;
     color: #fff;
     padding-top: 180px;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: url(bg2.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
 }
 .banner-text h1{
     font-size: 60px;
@@ -25,19 +31,22 @@
 .banner-btn{
     margin: 70px auto 0;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .banner-btn a{
     width: 150px;
-    text-decoration: none;
-    display: inline-block;
     margin: 0 10px;
+    text-decoration: none;
+    display: block;
     padding: 12px 0;
     color: #fff;
     border: .5px solid #fff;
     position: relative;
-    z-index: 1;
+    z-index: 5;
     transition: color 0.5s;
     font-family: Verdana;
+
 }
 .banner-btn a span{
     width:  0%;
@@ -55,4 +64,23 @@
 }
 .banner-btn a:hover{
     color: black;
+}
+.box{
+    position: absolute;
+    display: none;
+    top:0px;
+    right:0px;
+    transform: translate(-50%, 0%);
+    height:100px;
+    width:150px;
+    z-index: 10;
+}
+.banner-btn a:hover + .box,.box:hover{
+    display: block;
+    position: relative;
+    z-index: 5;
+}
+#vissza {
+    position: relative;
+    z-index: 1;
 }
