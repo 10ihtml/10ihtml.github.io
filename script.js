@@ -1,35 +1,28 @@
-var get = id => document.getElementById(id);
 var make = type => document.createElement(type);
-var add = (id, elem) => get(id).appendChild(elem);
-var text = text => document.createTextNode(text);
+var add = (id, elem) => document.getElementById(id).appendChild(elem);
 
 var constructor = (link, name) => {
-    let container = make("div");
-    container.setAttribute("class", "container");
-    
-    let a = make("a");
-    a.setAttribute("href", link)
-    a.appendChild(make("span"));
-    a.appendChild(text(name));
-    
-    container.appendChild(a);
+    let frame = make("iframe");
+    frame.src = link;
 
     let box = make("div");
-    box.setAttribute("class", "box");
-
-    let frame = make("iframe");
-    frame.setAttribute("src", link);
-    frame.setAttribute("width", "1280px");
-    frame.setAttribute("height", "720px");
-
+    box.className = "box";
     box.appendChild(frame);
-    
-    container.appendChild(box);
+
+    let a = ((a) => {
+        a.href = link;
+        a.appendChild(make("span"));
+        a.appendChild(document.createTextNode(name));
+        return a;
+    })(make("a"))
+
+    let container = make("div");
+    container.className = "container"
+    container.appendChild(a);
+    container.appendChild(box);    
     return container;
 }
 
-
-d = "1000px"
 let websites = [
     ["https://jvakos431.github.io",       "J-V Ákos"      ], 
     ["https://theconqueror327.github.io", "Erdőhelyi Márk"], 
